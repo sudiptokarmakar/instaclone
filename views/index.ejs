@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all chats</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="main display: flex flex-col bg-gray-100">
+        <h5 class="text-white bg-gray-500 py-2">whatsapp clone</h5>
+            <a class="mb-3 text-transform: uppercase text-sm hover:text-base cursor-pointer" href="http://localhost:3000/create">add new</a>
+        <% for (let chat of re) { %>
+            <div class="bg-gray-200 w-11/12 justify-items-center ml-10">
+                <h2 class="text-transform: uppercase text-neutral-700 text-xl leading-6"><%= chat.from %></h2>
+                <h5 class="text-neutral-500"><%= chat.to %></h5>
+                <h5 class="text-neutral-500"><%= chat.msg %></h5>
+                <h5 class="text-neutral-500"><%= chat.date %></h5>
+            </div>
+            <form action="/edit/<%= chat.id %>" method="get">
+                <button class="text-red-700">edit</button>
+            </form>
+            <form action="/show/<%= chat.id %>" method="post">
+                <button class="text-red-700">delete</button>
+            </form>
+            <hr class="pb-10">
+        <% } %>
+    </div>
+</body>
+</html>

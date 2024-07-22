@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create new chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class=" bg-zinc-700 display: flex flex-col bg-gray-100 justify-items-center items-center w-full
+h-lvh">
+<div class=" div_main bg-zinc-300">
+    <form action="/create" method="post">
+        <div class="my-3"><span class="mr-2">from:</span><input name="from" type="text" placeholder="@from" autofocus="true"></div>
+        <div class="my-3"><span class="mr-2">to:</span><input name="to" type="text" placeholder="@to"></div>
+        <div class="my-3"><textarea name="msg" placeholder="type your message here" cols="50" rows="5"></textarea></div>
+        <div class="my-3"><span class="mr-2">date:</span><input name="date" type="date"></div>
+        <button class=" bg-blue-700 m-5 p-1">submit</button>
+    </form>
+</div>
+</body>
+</html>
